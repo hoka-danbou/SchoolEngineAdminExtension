@@ -1,0 +1,11 @@
+# Exclude binary artifacts from this scaffold
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+*.webp
+*.pyc
+*.pyd
+*.so
+*.dll
