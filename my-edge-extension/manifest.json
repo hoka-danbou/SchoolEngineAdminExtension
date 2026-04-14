@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "App Example Router Extension",
+  "version": "0.1.0",
+  "description": "https://app.example.com/* 専用で画面別処理を行う Edge 拡張機能の最小ひな形",
+  "action": {
+    "default_popup": "src/popup/popup.html"
+  },
+  "background": {
+    "service_worker": "src/background/service-worker.js",
+    "type": "module"
+  },
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://app.example.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://app.example.com/*"
+      ],
+      "js": [
+        "src/content/index.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
